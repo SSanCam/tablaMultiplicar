@@ -6,7 +6,11 @@
  *
  * @return Int - número entero válido dentro del rango especificado
  */
-fun pedirNum
+fun pedirNum(): Int{
+    println("Introduzca un número entre 1 y 100: ")
+    val numPedido = readln().toInt()
+    return numPedido
+}
 
 /**
  * Realiza una pregunta para contestar con s/si ó n/no
@@ -15,9 +19,17 @@ fun pedirNum
  *
  * @return Boolean - true/false dependiendo de la respuesta válida a la pregunta
  */
-fun pregunta
+fun pregunta(): String {
+    println("¿Desea generar otra tabla de multiplicación? (s/n)")
+    val respuesta = readln().lowercase()
+    return respuesta
+}
 
 fun main() {
     //TODO: Solicitar la introducción de un número entre 1 y 100 y mostrar su table de multiplicar...
     //Hasta que se responda negativamente a la pregunta "¿Desea generar otra tabla de multiplicación? (s/n)"
+    while (pregunta() == "s"){
+        pedirNum()
+    }
+
 }
